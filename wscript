@@ -71,6 +71,7 @@ def add_zcm_configure_options(ctx):
     add_trans_option('udpm',   'Enable the UDP Multicast transport (LCM-compatible)')
     add_trans_option('serial', 'Enable the Serial transport')
     add_trans_option('can',    'Enable the Canbus transport')
+    add_trans_option('shmem',  'Enable the Canbus transport')
 
 def add_zcm_build_options(ctx):
     gr = ctx.add_option_group('ZCM Build Options')
@@ -151,6 +152,7 @@ def process_zcm_configure_options(ctx):
     env.USING_TRANS_UDPM   = hasopt('use_udpm')
     env.USING_TRANS_SERIAL = hasopt('use_serial')
     env.USING_TRANS_CAN    = hasopt('use_can')
+    env.USING_TRANS_SHMEM  = hasopt('use_shmem')
 
     env.HASH_TYPENAME      = getattr(opt, 'hash_typename')
     env.HASH_MEMBER_NAMES  = getattr(opt, 'hash_member_names')
@@ -197,6 +199,7 @@ def process_zcm_configure_options(ctx):
     print_entry("udpm",   env.USING_TRANS_UDPM)
     print_entry("serial", env.USING_TRANS_SERIAL)
     print_entry("can",    env.USING_TRANS_CAN)
+    print_entry("shmem",  env.USING_TRANS_SHMEM)
 
     Logs.pprint('BLUE', '\nType Configuration:')
     print_entry("hash-typename", env.HASH_TYPENAME == 'true')
