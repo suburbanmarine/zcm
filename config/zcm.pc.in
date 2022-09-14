@@ -10,5 +10,5 @@ Description: Zero Communications and Marshalling (ZCM)
 Requires:
 Version: @version@
 Libs: -L${libdir} -lzcm
-Cflags: -I${includedir}
+Cflags: -I${includedir} -std=c++11
 classpath=${jardir}/zcm.jar
