@@ -41,7 +41,7 @@ cd $ROOTDIR
 ## BUILD
 ./waf configure distclean
 
-./waf configure --use-all --use-third-party --prefix=$DEB_PACKAGE_ASSEMBLY_DIR/usr/
+./waf configure --use-zmq --use-elf --use-third-party --use-inproc --use-ipc --use-udpm --use-serial --use-can --prefix=$DEB_PACKAGE_ASSEMBLY_DIR/usr/
 ./waf build
 ./waf install
 
