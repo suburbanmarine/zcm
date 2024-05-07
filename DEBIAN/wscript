@@ -4,6 +4,7 @@ from waflib import Utils
 
 waf_arch_dict = {
     'arm'    : 'armhf',
+    'thumb'  : 'armhf',
     'aarch64': 'arm64',
     'x86_64' : 'amd64'
 }
